@@ -1,15 +1,26 @@
 import React from 'react';
 import { Navbar, SideBar } from '../../compenent/dashboradComp';
 import { Outlet } from 'react-router-dom';
+import styled from 'styled-components';
+
 const SharedLayout = () => {
     return (
         <div>
             <Navbar />
-            <SideBar />
-            <Outlet />
+            <Wrraper>
+                <SideBar />
+                <Outlet />
+            </Wrraper>
 
         </div>
     );
 }
+
+const Wrraper = styled.main`
+display: flex;
+justify-content: space-between;
+width: 60%;
+
+`
 
 export default SharedLayout;
