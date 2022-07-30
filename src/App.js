@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header, Footer } from './compenent/index';
-import { HomePage, ErrorPage, SchoolDetails, SchoolPage, LoginPage } from './pages/index';
+import { AddUsers, Statistic, SharedLayout } from './pages/Dashborad/index';
+import { HomePage, ErrorPage, SchoolDetails, SchoolPage, LoginPage, PrivateRoute } from './pages/index';
 function App() {
 
 
@@ -11,9 +12,19 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='schools' element={<SchoolPage />} />
+          <Route path='school' element={<SchoolPage />} />
           <Route path='school/:id' element={<SchoolDetails />} />
           <Route path='login' element={<LoginPage />} />
+
+          <Route path='dashboard' element={
+            <SharedLayout />
+          }
+          >
+            <Route path='addUser' element={<AddUsers />} />
+            <Route index path='stats' element={<Statistic />} />
+
+          </Route>
+
           <Route path='*' element={<ErrorPage />} />
         </Routes>
 
