@@ -17,7 +17,10 @@ function App() {
           <Route path='login' element={<LoginPage />} />
 
           <Route path='dashboard' element={
-            <SharedLayout />
+            <PrivateRoute>
+              <SharedLayout />
+            </PrivateRoute>
+
           }
           >
             <Route path='addUser' element={<AddUsers />} />

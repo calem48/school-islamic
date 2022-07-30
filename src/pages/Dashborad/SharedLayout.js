@@ -16,7 +16,9 @@ const SharedLayout = () => {
     );
 }
 
+// for testing nothing else
 const Wrraper = styled.main`
+
 display: flex;
 justify-content: space-between;
 width: 60%;

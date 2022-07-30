@@ -1,11 +1,12 @@
 import React from 'react';
+import { Navigate } from 'react-router-dom';
+const PrivateRoute = ({ children }) => {
+    let isLogin = true
+    if (!isLogin) {
+        return <Navigate to='/' />;
+    }
 
-const PrivateRoute = () => {
-    return (
-        <div>
-
-        </div>
-    );
+    return children
 }
 
 export default PrivateRoute;
