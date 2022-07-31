@@ -20,9 +20,9 @@ function App() {
             <PrivateRoute>
               <SharedLayout />
             </PrivateRoute>
-
           }
           >
+
             <Route path='addUser' element={<AddUsers />} />
             <Route index path='stats' element={<Statistic />} />
 
